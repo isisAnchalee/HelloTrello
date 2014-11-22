@@ -1,28 +1,26 @@
+
 h1{
 	text-align:center;
 }
+
 .board-idx-item{
 	float:left;
-	height:165px;
-	width:300px;
-	border: 2px solid #323232;
+	height:100px;
+	width:230px;
 	text-align:center;
 	border-radius: 25px;
-	margin:30px;
-	box-shadow: 10px 10px 5px #888888;
+	margin:20px;
 }
 
 .list-cards{
 	float:left;
-	width: 200px;
+	width: 300px;
 	padding:7px;
-	border-radius: 25px;
-	margin:20px;
-	height: 500px;
-	border: 2px solid #323232;
-	box-shadow: 10px 10px 5px #888888;
+	margin:10px;
+	margin-top:-20px;
 }
 
 h1.list-cards{
 font-size:10px;
 }
+
