@@ -8,7 +8,6 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 
-
 a:hover{
 	text-decoration:none;
 	color:white;
@@ -18,19 +17,24 @@ a:hover{
 	font-size:1.1em;
 	margin-left:50px;
 }
+
 .list-show{
 	width:22%;
 	float:left;
-	margin:10px;
+	margin-right:10px;
+	margin-top:10px;
 	font-size: 1em;
 	background-color:#e3e3e3;
 	border-radius:3px;
 	padding:6px;
+	min-width:150px;
 }
 
 .list-title{
 	color: #4d4d4d;
 	font-weight: bold;
+	padding-top:7px;
+	display: inline-block;
 }
 
 .board-idx-item{
@@ -56,12 +60,13 @@ a:hover{
 flex: 1 1 auto;
 margin-bottom: 0;
 overflow-y: auto;
-overflow-x: hidden;
+overflow-x: hidden; 
 z-index: 1;
 }
 
 .card-pane{
 	margin-top:4px;
+	padding-top:10px;
 }
 .card-pane:hover{
 	background-color:#f0f0f0;
@@ -74,7 +79,7 @@ z-index: 1;
      content: " ";
      clear: both;
      height: 0;
-     }
+     }  
 
 .clearfix { display: inline-block; }
 /* start commented backslash hack \*/
@@ -82,8 +87,38 @@ z-index: 1;
 .clearfix { display: block; }
 /* close commented backslash hack */
 
+.board-title{
+	padding:3px;
+	font-weight:bold;
+	font-size:1.3em;
+	color:white;
+
+}
+.logo{
+margin-top:-6px;
+opacity: 0.5;
+// margin-left:300px;
+}
+
+.logo:hover{
+opacity: 0.8;
+}
 
 
+.customnav{
+	background-color: #0c6599 !important;
+	border:none !important;
+
+}
+.funbtn{
+	background-color: #0e74af !important;
+	border:none;
+	color:white;
+	font-weight:bold;
+}
+.funbtn:hover{
+	background-color: #0c6599 !important;
+}
 .board-link{
 	text-decoration:none;
 	color:white;
@@ -97,4 +132,16 @@ z-index: 1;
 	color:#8c8c8c;
 	font-size:0.8em;
 	margin-top:10px;
+}
+
+.custom-button{
+	background-color: #539cc6 !important;
+}
+.custom-button:hover{
+	background-color: #6aa0be !important;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+	.logo{
+		margin-left:140px;
+	}
 }
