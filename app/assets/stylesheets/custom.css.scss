@@ -19,7 +19,7 @@ a:hover{
 	margin-left:50px;
 }
 .list-show{
-	width:20%;
+	width:22%;
 	float:left;
 	margin:10px;
 	font-size: 1em;
@@ -27,6 +27,7 @@ a:hover{
 	border-radius:3px;
 	padding:6px;
 }
+
 .list-title{
 	color: #4d4d4d;
 	font-weight: bold;
@@ -56,10 +57,12 @@ flex: 1 1 auto;
 margin-bottom: 0;
 overflow-y: auto;
 overflow-x: hidden;
-padding: 4px 4px 1px;
 z-index: 1;
 }
 
+.card-pane{
+	margin-top:4px;
+}
 .card-pane:hover{
 	background-color:#f0f0f0;
 }
@@ -72,6 +75,7 @@ z-index: 1;
      clear: both;
      height: 0;
      }
+
 .clearfix { display: inline-block; }
 /* start commented backslash hack \*/
 * html .clearfix { height: 1%; }
@@ -89,6 +93,8 @@ z-index: 1;
 	color:#a6a6a6;
 }
 
-#show-main{
-
+.add-card{
+	color:#8c8c8c;
+	font-size:0.8em;
+	margin-top:10px;
 }
