@@ -19,10 +19,9 @@ a:hover{
 }
 
 .list-show{
-	width:22%;
+	width:23%;
 	float:left;
 	margin-right:10px;
-	margin-top:10px;
 	font-size: 1em;
 	background-color:#e3e3e3;
 	border-radius:3px;
@@ -33,7 +32,8 @@ a:hover{
 .list-title{
 	color: #4d4d4d;
 	font-weight: bold;
-	padding-top:7px;
+	font-size:1.1em;
+	padding-top:1px;
 	display: inline-block;
 }
 
@@ -110,11 +110,19 @@ opacity: 0.8;
 	border:none !important;
 
 }
+.star{
+color:white;
+top:-1px;
+position:relative;
+}
+
 .funbtn{
 	background-color: #0e74af !important;
 	border:none;
 	color:white;
 	font-weight:bold;
+	font-size:1.1em;
+	margin-top:-10px;
 }
 .funbtn:hover{
 	background-color: #0c6599 !important;
