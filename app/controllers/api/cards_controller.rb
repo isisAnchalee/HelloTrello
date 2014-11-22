@@ -4,7 +4,7 @@ module Api
 
     def create
       @card = current_list.cards.new(card_params)
-
+      
       if @card.save
         render json: @card
       else

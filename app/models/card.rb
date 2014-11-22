@@ -17,4 +17,19 @@ class Card < ActiveRecord::Base
   has_many :card_assignments, dependent: :destroy
 
   default_scope { order(:ord) }
+
+
+   def self.random_card
+    adj = Faker::Hacker.adjective
+    verb = Faker::Hacker.verb
+    ingverb = Faker::Hacker.ingverb
+    noun = Faker::Hacker.noun
+
+    desc = 
+      "I need to #{verb} your #{adj} #{ingverb} #{noun} today!!"
+    list_id = rand(0...8)
+
+    Card.new title: noun, list_id: list_id, description: desc
+  end
+
 end
