@@ -30,8 +30,11 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
   },
 
   addEntry: function(list){
-    var newSubview = new TrelloClone.Views.ListsShow({ board: this.board,
-    model: list });
+    var newSubview = new TrelloClone.Views.ListsShow({ 
+      board: this.board,
+      model: list 
+    });
+    
     this.addSubview(".board-lists", newSubview);
   }
 
