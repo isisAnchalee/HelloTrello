@@ -25,7 +25,7 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
   },
 
   saveRecentTitleEdit: function(event){
-
+    var that = this;
 
     var title = $('.titleEdit').val();
     var board_id = $('.titleEdit').data("id");
@@ -76,7 +76,8 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
     var boardId = $currentTarget.data('id');
     var title = $('#list-title').val();
 
-    var newList = new TrelloClone.Models.List({ title: title, board_id: boardId});
+    var newList = new TrelloClone.Models.List({ title: title, board_id: boardId }, { board: this.model });
+
     newList.save({}, {
       success: function(){
         that.model.lists().add(newList);

@@ -3,9 +3,12 @@ a {
 	color:white;
 }
 
-html {
-  font-size: 100%;
-  -webkit-text-size-adjust: 100%;
+html{
+    min-height:100%;/* make sure it is at least as tall as the viewport */
+    position:relative
+}
+body{
+    height:100% /* force the BODY element to match the height of the HTML element */
 }
 
 a:hover{
@@ -27,7 +30,7 @@ a:hover{
 	border-radius:3px;
 	padding:6px;
 	margin-top:5px;
-	min-width:150px;
+	min-width:170px;
 }
 .new-list{
 	width:23%;
@@ -133,8 +136,10 @@ a:hover{
 }
 .logo{
 	opacity: 0.5;
+	width:auto;
+	margin-left:63%;
 	margin-top:7px;
-	margin-left:50%;
+
 }
 
 .navbar-header{
@@ -222,14 +227,30 @@ a:hover{
 	padding-bottom:none;
 	height:20px;
 	width:20px;
+	position:inline-block;
 	border:none;
 	float:right;
 	background-color:#e3e3e3;
 }
 
+.login-form{
+	width:200px;
+	margin:0 auto;
+}
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-	.logo{
-		margin-left:140px;
-	}
+.custom-login{
+	width:200px;
+	height:40px;
+	font-weight:normal;
+}
+
+.welcome-wrapper {
+	position:relative;
+}
+
+.splash-hello{
+	font-family: helvetica;
+	font-size:3em;
+	text-align:center;
+	margin-top:100px;
 }

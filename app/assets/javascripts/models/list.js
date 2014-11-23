@@ -17,7 +17,6 @@ TrelloClone.Models.List = Backbone.Model.extend({
   parse: function (response) {
 
     if(this.cards){      
-
       this.cards().set(response.cards);
       delete response.cards;
     }

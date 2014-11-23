@@ -8,6 +8,44 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
     this.model.cards().each(this.addEntry.bind(this))
   },
 
+  events:{
+    "dblclick .list-title": "editListTitle",
+    "blur .titleEdit": "saveListTitleEdit",
+    "click .add-card": "createNewCard"
+  },
+
+  editListTitle: function(event) {
+    var $currentTarget = $(event.currentTarget);
+    var string = '<input type="text" name="list[title]" value="' + this.model.get("title") +'" data-id="' + this.model.id + '" class="titleEdit">'
+    $currentTarget.replaceWith(string)
+  },
+
+  saveListTitleEdit: function(event){
+
+    var title = $('.titleEdit').val();
+    var list_id = $('.titleEdit').data("id");
+    
+    //TODO EDIT LIST TITLE
+    var theUrl = "api/lists/" + this.model.id;
+    $.ajax({
+      url: theUrl ,
+      type: "PUT",
+      data: { list: { title: title, id: list_id, board_id: this.model.board.id } },
+      dataType: 'JSON',
+      success: function(resp) {
+        var $replaceItem = $('.titleEdit');
+        var string = '<span class="list-title">' + resp.title + '</span>'
+        $replaceItem.replaceWith(string);
+      }
+    })
+  },
+
+  createNewCard: function(){
+    //TODO create new card 
+    var newCardString = 'Hi!!!'
+    $('.add-card').replaceWith(newCardString);
+  },
+
   render:function(){
   	var content = this.template({ list: this.model })
   	this.$el.html(content);
