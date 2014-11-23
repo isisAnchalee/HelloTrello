@@ -13,8 +13,37 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
     "click .board-delete-button": "deleteBoard",
     "click .submit-new-list" : "newList",
     'submit form': 'newList',
-    "click .delete-list": "deleteList"
+    "click .delete-list": "deleteList",
+    "dblclick .funbtn": "editBoardTitle",
+    "blur .titleEdit": "saveRecentTitleEdit"
   },
+
+  editBoardTitle: function(event) {
+    var $currentTarget = $(event.currentTarget);
+    var string = '<input type="text" name="post[title]" value="' + this.model.get("title") +'" data-id="' + this.model.id + '" class="titleEdit">'
+    $currentTarget.replaceWith(string)
+  },
+
+  saveRecentTitleEdit: function(event){
+
+
+    var title = $('.titleEdit').val();
+    var board_id = $('.titleEdit').data("id");
+    
+    var theUrl = "api/boards/" + this.model.id;
+    $.ajax({
+      url: theUrl ,
+      type: "PUT",
+      data: { board: { title: title }},
+      dataType: 'JSON',
+      success: function(resp) {
+        var $replaceItem = $('.titleEdit');
+        var string = '<button class="btn btn-primary funbtn">' + resp.title + '</button>'
+        $replaceItem.replaceWith(string);
+      }
+    })
+  },
+
 
   deleteBoard: function(){
     var $currentTarget = $(event.target);
