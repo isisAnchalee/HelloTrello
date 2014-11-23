@@ -11,6 +11,7 @@ TrelloClone.Views.BoardsIndex = Backbone.CompositeView.extend({
   },
 
   events: {
+    'click .new-board-button': 'submit',
     'submit form': 'submit'
   },
 
@@ -37,7 +38,9 @@ TrelloClone.Views.BoardsIndex = Backbone.CompositeView.extend({
     newBoard.save({},{
       success: function(){
         TrelloClone.boards.add(newBoard);
-
+        $('body').removeClass('modal-open');
+        $('#newboard').modal('hide');
+        $('div.modal-backdrop').remove();
       }
     })
   }

@@ -26,6 +26,7 @@ a:hover{
 	background-color:#e3e3e3;
 	border-radius:3px;
 	padding:6px;
+	margin-top:5px;
 	min-width:150px;
 }
 
@@ -169,6 +170,18 @@ position:relative;
 
 .modal-title{
 	text-align: center !important;
+}
+
+.modal-backdrop{
+    opacity: 0.3 !important;
+    -webkit-transition: opacity 1s linear !important;
+    transition: opacity 1s linear !important;
+}
+
+.board-delete-button{
+	float:right;
+	margin-top: -10px !important;
+	margin-bottom: -9px !important;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 	.logo{
