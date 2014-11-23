@@ -41,7 +41,7 @@ a:hover{
 .board-idx-item{
 	float:left;
 	height:105px;
-	width:200px;
+	width: 30%;
 	margin:10px;
 	color:white;
 	background-color:#0b6294 !important;
@@ -61,7 +61,7 @@ a:hover{
 	background-color: #dbdbdb !important;
 	float:left;
 	height:105px;
-	width:200px;
+	width: 30%;
 	margin:10px;
 	line-height: 80px !important;
 	text-align:center;
@@ -183,6 +183,7 @@ position:relative;
 	margin-top: -10px !important;
 	margin-bottom: -9px !important;
 }
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 	.logo{
 		margin-left:140px;
