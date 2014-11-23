@@ -4,8 +4,8 @@ a {
 }
 
 html {
-    font-size: 100%;
-    -webkit-text-size-adjust: 100%;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 a:hover{
@@ -50,6 +50,7 @@ a:hover{
 .board-idx-item:hover{
 	background-color:#0a5783 !important;
 }
+
 .board-container{
 	width:87%;
 	margin: 0 auto;
@@ -72,15 +73,15 @@ a:hover{
 	background-color: #cccccc !important;
 }
 .list-cards {
--moz-box-flex: 1;
--webkit-box-flex: 1;
--ms-flex: 1 1 auto;
--webkit-flex: 1 1 auto;
-flex: 1 1 auto;
-margin-bottom: 0;
-overflow-y: auto;
-overflow-x: hidden; 
-z-index: 1;
+	-moz-box-flex: 1;
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 auto;
+	-webkit-flex: 1 1 auto;
+	flex: 1 1 auto;
+	margin-bottom: 0;
+	overflow-y: auto;
+	overflow-x: hidden; 
+	z-index: 1;
 }
 
 .card-pane{
@@ -92,13 +93,13 @@ z-index: 1;
 }
 
 .clearfix:after {
-     visibility: hidden;
-     display: block;
-     font-size: 0;
-     content: " ";
-     clear: both;
-     height: 0;
-     }  
+ visibility: hidden;
+ display: block;
+ font-size: 0;
+ content: " ";
+ clear: both;
+ height: 0;
+}  
 
 .clearfix { display: inline-block; }
 /* start commented backslash hack \*/
@@ -114,13 +115,19 @@ z-index: 1;
 
 }
 .logo{
-margin-top:-6px;
-opacity: 0.5;
-// margin-left:300px;
+	opacity: 0.5;
+	margin-top:7px;
+	margin-left:50%;
+}
+
+.navbar-header{
+	width: 500px;
+	margin: 0 auto;
+	position: relative;
 }
 
 .logo:hover{
-opacity: 0.8;
+	opacity: 0.8;
 }
 
 
@@ -130,9 +137,9 @@ opacity: 0.8;
 
 }
 .star{
-color:white;
-top:-1px;
-position:relative;
+	color:white;
+	top:-1px;
+	position:relative;
 }
 
 .funbtn{
@@ -163,6 +170,9 @@ position:relative;
 
 .custom-button{
 	background-color: #539cc6 !important;
+	margin: 3px !important;
+	padding: 5px !important;
+	font-weight: bold !important;
 }
 .custom-button:hover{
 	background-color: #6aa0be !important;
@@ -173,9 +183,9 @@ position:relative;
 }
 
 .modal-backdrop{
-    opacity: 0.3 !important;
-    -webkit-transition: opacity 1s linear !important;
-    transition: opacity 1s linear !important;
+  opacity: 0.3 !important;
+  -webkit-transition: opacity 1s linear !important;
+  transition: opacity 1s linear !important;
 }
 
 .board-delete-button{
@@ -184,6 +194,10 @@ position:relative;
 	margin-bottom: -9px !important;
 }
 
+.navbar{
+	min-height:30px !important;
+  height: 38px !important;
+}
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 	.logo{
 		margin-left:140px;
