@@ -1,12 +1,42 @@
-<h1>Sign Up</h1>
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps:700' rel='stylesheet' type='text/css'>
+</head>
 
-<form action="/users" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label>Email<br>
-    <input name="user[email]" type="text"><br>
-  </label><br>
-  <label>Password<br>
-    <input name="user[password]" type="password"><br>
-  </label><br>
-  <input type="submit" value="Submit" class="btn btn-primary"><br>
-</form>
+<div class="box">
+	<div class="welcome-wrapper">
+		<div class="splash-hello"> Sign Up </div>
+		<form class="login-form" action="/users" method="post">
+		  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		  <label>
+		    <input name="user[email]" type="text" class="custom-login email-input"><br>
+		  </label><br>
+		  <label>
+		    <input name="user[password]" type="password" class="custom-login password-input"><br>
+		  </label><br>
+		  <input type="submit" value="Submit" class="btn btn-primary custom-login"><br>
+		</form>
+	</div>
+</div>
+
+
+<script>
+	$(document).ready(function(){
+		$('.email-input').on('click', function(){
+			$('.email-input').val("");
+		});
+
+		$('.password-input').on('click', function(){
+			$('.password-input').val("");
+		});
+	});
+
+$(".box").bgswitcher({
+  images: ["http://www.4freephotos.com/images/City-lights-at-nigh.jpg", "http://www.monicalshulman.com/data/photos/206_1ny39.jpg", "http://static.tumblr.com/ffe13f14205e353879b28c25df0e81fd/bgyiu5j/z5on3fk19/tumblr_static_blurry-city-lights1797.jpg"], 
+  effect: "fade", // fade, blind, clip, slide, drop, hide
+  interval: 5000, // Interval of switching
+  loop: true, // Loop the switching
+  shuffle: false, // Shuffle the order of an images
+  duration: 5000, // Effect duration
+  easing: "swing" // Effect easing
+});
+</script>
