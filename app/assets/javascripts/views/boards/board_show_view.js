@@ -12,7 +12,8 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
   events:{
     "click .board-delete-button": "deleteBoard",
     "click .submit-new-list" : "newList",
-    'submit form': 'newList'
+    'submit form': 'newList',
+    "click .delete-list": "deleteList"
   },
 
   deleteBoard: function(){
@@ -61,9 +62,22 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
         }
       },
       error: function(model, resp){
-        console.log(resp.responseText)
+        // console.log(resp.responseText)
       }
     });
+  },
+
+  deleteList: function(){
+    var $currentTarget = $(event.target);
+    var listId = $currentTarget.data('id');
+    var list = this.model.lists().get(listId);
+
+    list.destroy();
+        var newFragment = Backbone.history.getFragment($(this).attr('href'));
+        if (Backbone.history.fragment == newFragment) {
+            Backbone.history.fragment = null;
+            Backbone.history.navigate(newFragment, true);
+        }
   }
 
 });

@@ -213,6 +213,19 @@ a:hover{
 	min-height:30px !important;
   height: 38px !important;
 }
+
+.delete-list{
+	padding:0px;
+	padding-top:none;
+	padding-bottom:none;
+	height:20px;
+	width:20px;
+	border:none;
+	float:right;
+	background-color:#e3e3e3;
+}
+
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 	.logo{
 		margin-left:140px;
