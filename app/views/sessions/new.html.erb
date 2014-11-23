@@ -4,12 +4,24 @@
 		<form action="/session" method="post">
 		  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 		  <label>
-		    <input name="user[email]" class="custom-login" value="Username" type="text"><br>
+		    <input name="user[email]" class="custom-login email-input" value="Username" type="text"><br>
 		  </label><br>
 		  <label>
-		    <input name="user[password]" class="custom-login" value="Password" type="password"><br>
+		    <input name="user[password]" class="custom-login password-input" value="Password" type="password"><br>
 		  </label><br>
 		  <input type="submit" value="Submit" class="btn btn-primary custom-login"><br>
 		</form>
 	</div>
 </div>
+
+<script>
+	$(document).ready(function(){
+		$('.email-input').on('click', function(){
+			$('.email-input').val("");
+		});
+
+		$('.password-input').on('click', function(){
+			$('.password-input').val("");
+		});
+	});
+</script>
