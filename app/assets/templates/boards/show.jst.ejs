@@ -7,8 +7,31 @@
 			</span>
 			<button class="board-delete-button btn btn-primary navbar-btn custom-button" data-id="<%= board.id%>">Delete Board </button>
 		<div class="board-lists">
-		
+		</div>
+		<div class="new-list" data-toggle="modal" data-target="#new-list">
+		Add a list...
 		</div>
 	</div>
 </div>
 
+<div id="new-list" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">New List</h4>
+      </div>
+      <form>
+				<div class="input-group">
+				  <span class="input-group-addon">List Title:</span>
+				  <input type="text" class="form-control" id="list-title" placeholder="Example: 'Todo List'">
+				</div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <input type="submit" data-id="<%= board.id%>" value="Submit" class="btn btn-primary submit-new-list">
+      </form>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
