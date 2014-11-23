@@ -1,25 +1,25 @@
 <head>
-
 	<link href='http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps:700' rel='stylesheet' type='text/css'>
-
 </head>
 <div class="box">
-<div class="welcome-wrapper">
-	<div class="splash-hello"> Hello </div>
-	<div class="login-form ">
-		<form action="/session" method="post">
-		  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-		  <label>
-		    <input name="user[email]" class="custom-login email-input" value="Username" type="text"><br>
-		  </label><br>
-		  <label>
-		    <input name="user[password]" class="custom-login password-input" value="Password" type="password"><br>
-		  </label><br>
-		  <input type="submit" value="Submit" class="btn btn-primary custom-login"><br>
-		</form>
+	<div class="welcome-wrapper">
+		<div class="splash-hello"> Hello  </div>
+				<div class="welcome-message"> Just glorifying your todo list.</div>
+		<div class="login-form ">
+			<form action="/session" method="post">
+			  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			  <label>
+			    <input name="user[email]" class="custom-login email-input" value="Username" type="text"><br>
+			  </label><br>
+			  <label>
+			    <input name="user[password]" class="custom-login password-input" value="Password" type="password"><br>
+			  </label><br>
+			  <input type="submit" value="Submit" class="btn btn-primary custom-login"><br>
+			</form>
+		</div>
 	</div>
 </div>
-</div>
+
 <script>
 	$(document).ready(function(){
 		$('.email-input').on('click', function(){

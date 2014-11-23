@@ -269,13 +269,29 @@ a:hover{
 
 .splash-hello{
 	position:relative;
-	top:100px;
+	top:110px;
 	font-size:5em;
 	text-align:center;
 	color:white;
 	font-family:'Oleo Script Swash Caps', cursive;
 }
+.splash-sign-up{
+	position:relative;
+	top:110px;
+	font-family:'Oleo Script Swash Caps', cursive;
+	font-size:4em;
+	text-align:center;
+	color:white;
+	margin-bottom:13px;
+}
 
+.welcome-message{
+	text-align: center;
+	color:white;
+	position:relative;
+	top:85px;
+	font-family:"Helvetica Neue";
+}
 .box{
 	height:100vh;
 
