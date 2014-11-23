@@ -15,7 +15,7 @@ a:hover{
 .myboards{
 	font-weight:bold;
 	font-size:1.1em;
-	margin-left:50px;
+	margin-left:-20px;
 }
 
 .list-show{
@@ -41,7 +41,6 @@ a:hover{
 	float:left;
 	height:105px;
 	width:200px;
-	border-radius: 25px;
 	margin:10px;
 	color:white;
 	background-color:#0b6294 !important;
@@ -49,9 +48,28 @@ a:hover{
 
 .board-idx-item:hover{
 	background-color:#0a5783 !important;
-
+}
+.board-container{
+	width:87%;
+	margin: 0 auto;
+	margin-top:40px;
+	position:relative;
 }
 
+.new-board{
+	background-color: #dbdbdb !important;
+	float:left;
+	height:105px;
+	width:200px;
+	margin:10px;
+	line-height: 80px !important;
+	text-align:center;
+	font-weight:normal !important;
+	color: #8c8c8c !important;
+}
+.new-board:hover{
+	background-color: #cccccc !important;
+}
 .list-cards {
 -moz-box-flex: 1;
 -webkit-box-flex: 1;
