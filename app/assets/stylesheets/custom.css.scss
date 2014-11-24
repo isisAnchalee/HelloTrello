@@ -8,7 +8,8 @@ html{
     position:relative
 }
 body{
-    height:100% /* force the BODY element to match the height of the HTML element */
+    height:100% ;
+    min-width: 900px;
 }
 
 a:hover{
@@ -21,6 +22,9 @@ a:hover{
 	margin-left:-20px;
 }
 
+.container{
+	width: 100% !important;
+}
 .list-show{
 	width:23%;
 	float:left;
@@ -30,7 +34,7 @@ a:hover{
 	border-radius:3px;
 	padding:6px;
 	margin-top:5px;
-	min-width:170px;
+	min-width:200px;
 }
 .new-list{
 	width:23%;
