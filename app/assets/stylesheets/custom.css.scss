@@ -36,9 +36,12 @@ a:hover{
 	margin-top:5px;
 	min-width:200px;
 }
+
 .new-list{
 	width:23%;
-	float:left;
+	position:relative;
+	top:-4px;
+	display: inline-block;
 	margin-right:10px;
 	font-size: 1em;
 	background-color:#0c669a;
@@ -105,7 +108,7 @@ a:hover{
 	flex: 1 1 auto;
 	margin-bottom: 0;
 	overflow-y: auto;
-	min-height:40px;
+	min-height:20px;
 	overflow-x: hidden; 
 	z-index: 1;
 }
@@ -144,7 +147,7 @@ a:hover{
 .logo{
 	opacity: 0.5;
 	width:auto;
-	margin-left:63%;
+	margin:0 auto;
 	margin-top:7px;
 
 }
@@ -185,6 +188,7 @@ a:hover{
 	font-weight:bold;
 	font-size:1.1em;
 	margin-top:-10px;
+	margin-left:-13px;
 }
 .funbtn:hover{
 	background-color: #0c6599 !important;
@@ -225,8 +229,8 @@ a:hover{
 }
 
 .board-delete-button{
-	float:right;
-	margin-top: -10px !important;
+	position:relative;
+	margin-top: -27px !important;
 	margin-bottom: -9px !important;
 }
 
@@ -272,7 +276,7 @@ a:hover{
 }
 
 #show-main{
-	margin-top:20px;
+	margin-top:13px;
 }
 
 .splash-hello{
