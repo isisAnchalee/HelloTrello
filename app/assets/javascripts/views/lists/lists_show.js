@@ -5,6 +5,7 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
   initialize: function(){
   	this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model.cards(), 'add', this.addEntry)
+    this.listenTo(this.model.cards(), 'remove', this.render)
     this.model.cards().each(this.addEntry.bind(this))
   },
 
@@ -13,7 +14,8 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
     "blur .listTitleEdit": "saveListTitleEdit",
     "click .add-card": "createNewCardForm",
     "click .new-card-btn": "createNewCard",
-    "click .add-card-close-btn": "closeNewCardPane"
+    "click .add-card-close-btn": "closeNewCardPane",
+    "click .delete-card": "deleteCard"
   },
 
   editListTitle: function(event) {
@@ -39,6 +41,13 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
         $replaceItem.replaceWith(string);
       }
     })
+  },
+
+  deleteCard: function(){
+    var $currentTarget = $(event.target);
+    var cardId = $currentTarget.data("id");
+    var card = this.model.cards().get(cardId);
+    card.destroy();
   },
 
   createNewCardForm: function(event){
