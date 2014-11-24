@@ -27,9 +27,9 @@ class Card < ActiveRecord::Base
 
     desc = 
       "I need to #{verb} your #{adj} #{ingverb} #{noun} today!!"
-    list_id = rand(14..16)
+    list_id = rand(56..63)
 
-    Card.new title: noun, list_id: list_id, description: desc
+    Card.new title: "#{ingverb} #{noun}" , list_id: list_id, description: desc
   end
 
 end
