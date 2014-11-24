@@ -25,7 +25,6 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
     var title = $('.titleEdit').val();
     var list_id = $('.titleEdit').data("id");
     
-    //TODO EDIT LIST TITLE
     var theUrl = "api/lists/" + this.model.id;
     $.ajax({
       url: theUrl ,
@@ -40,10 +39,11 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
     })
   },
 
-  createNewCard: function(){
-    //TODO create new card 
-    var newCardString = 'Hi!!!'
-    $('.add-card').replaceWith(newCardString);
+  createNewCard: function(event){
+    var newCardString = "<input type='text' name='card[title]' value='Title'> <textarea name='card[description]'></textarea> <input type='submit' value='Submit'>"
+    console.log(event.currentTarget);
+    $currentTarget = $(event.currentTarget);
+    $currentTarget.replaceWith(newCardString);
   },
 
   render:function(){

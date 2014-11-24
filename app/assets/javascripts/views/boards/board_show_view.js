@@ -103,11 +103,11 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
     var list = this.model.lists().get(listId);
 
     list.destroy();
-        var newFragment = Backbone.history.getFragment($(this).attr('href'));
-        if (Backbone.history.fragment == newFragment) {
-            Backbone.history.fragment = null;
-            Backbone.history.navigate(newFragment, true);
-        }
+    var newFragment = Backbone.history.getFragment($(this).attr('href'));
+    if (Backbone.history.fragment == newFragment) {
+        Backbone.history.fragment = null;
+        Backbone.history.navigate(newFragment, true);
+    }
   }
 
 });
