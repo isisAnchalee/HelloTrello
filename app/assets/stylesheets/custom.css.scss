@@ -239,6 +239,7 @@ a:hover{
 	position:inline-block;
 	border:none;
 	float:right;
+	color: #a6a6a6;
 	background-color:#e3e3e3;
 }
 
@@ -321,4 +322,14 @@ a:hover{
 
 .new-card-btn{
 	padding:5px !important;
+}
+
+.add-card-close-btn{
+	position:relative;
+	top:2px;
+	padding:0px;
+	margin:5px;
+	border: 0;
+	color: #a6a6a6;
+	background-color:#e3e3e3;
 }
