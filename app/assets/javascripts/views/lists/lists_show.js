@@ -40,7 +40,7 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
   },
 
   createNewCard: function(event){
-    var newCardString = "<input type='text' class='new-card-title' name='card[title]' value='Title'> <textarea class='new-card-description' name='card[description]'></textarea> <input type='submit' class='btn btn-success' value='Submit'>"
+    var newCardString = "<textarea class='new-card-description' name='card[title]'></textarea> <input type='submit' class='btn btn-success new-card-btn' value='Submit'>"
     $currentTarget = $(event.currentTarget);
     $currentTarget.replaceWith(newCardString);
   },

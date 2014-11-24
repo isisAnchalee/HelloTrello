@@ -25,9 +25,8 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
   },
 
   saveRecentTitleEdit: function(event){
-    var that = this;
 
-    var title = $('.titleEdit').val();
+    var title = this.$('.titleEdit').val();
     this.model.set('title', title);
     this.model.save({}, {success: function(model){
     }.bind(this)});

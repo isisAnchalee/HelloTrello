@@ -301,18 +301,24 @@ a:hover{
 }
 
 .new-card-title{
-	width:99%;
+	width:100%;
 	margin: 0 auto;
 	margin-top:7px;
 	padding:3px;
+	border-radius: 2px;
 	border: 0;
 }
 
 .new-card-description{
-	margin-top:3px;
-	width:99%;
-	margin-bottom: 4px;
+	margin-top:4px;
+	width:99.5%;
+	border-radius:2px;
+	margin-bottom: 2px;
 	max-height: 162px;
 	min-height: 54px;
 	border: 0;
+}
+
+.new-card-btn{
+	padding:5px !important;
 }
