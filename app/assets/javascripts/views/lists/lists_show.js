@@ -24,23 +24,32 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
     $currentTarget.replaceWith(string)
   },
 
-  saveListTitleEdit: function(event){
+  // saveListTitleEdit: function(event){
 
-    var title = this.$('.listTitleEdit').val();
-    var list_id = this.$('.listTitleEdit').data("id");
+  //   var title = this.$('.listTitleEdit').val();
+  //   var list_id = this.$('.listTitleEdit').data("id");
     
-    var theUrl = "api/lists/" + this.model.id;
-    $.ajax({
-      url: theUrl ,
-      type: "PUT",
-      data: { list: { title: title, id: list_id, board_id: this.model.get("board_id") } },
-      dataType: 'JSON',
-      success: function(resp) {
-        var $replaceItem = $('.listTitleEdit');
-        var string = '<span class="list-title">' + resp.title + '</span>'
-        $replaceItem.replaceWith(string);
-      }
-    })
+  //   var theUrl = "api/lists/" + this.model.id;
+  //   $.ajax({
+  //     url: theUrl ,
+  //     type: "PUT",
+  //     data: { list: { title: title, id: list_id, board_id: this.model.get("board_id") } },
+  //     dataType: 'JSON',
+  //     success: function(resp) {
+  //       var $replaceItem = $('.listTitleEdit');
+  //       var string = '<span class="list-title">' + resp.title + '</span>'
+  //       $replaceItem.replaceWith(string);
+  //     }
+  //   })
+  // },
+
+  saveListTitleEdit: function(event){
+    var title = this.$('.listTitleEdit').val();
+    this.model.set('title', title);
+    this.model.save({}, {
+      success: function(){
+      }.bind(this)
+    });
   },
 
   deleteCard: function(){
@@ -93,6 +102,7 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
   },
 
   removeCard: function(card){
+    console.log("REMOVE")
     var cardSubview =
     _(this.subviews()['.list-cards']).find(function(subview){
       return subview.model == card;
