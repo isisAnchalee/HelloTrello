@@ -92,6 +92,7 @@ a:hover{
 .new-board:hover{
 	background-color: #cccccc !important;
 }
+
 .list-cards {
 	-moz-box-flex: 1;
 	-webkit-box-flex: 1;
@@ -100,6 +101,7 @@ a:hover{
 	flex: 1 1 auto;
 	margin-bottom: 0;
 	overflow-y: auto;
+	min-height:40px;
 	overflow-x: hidden; 
 	z-index: 1;
 }
@@ -333,4 +335,10 @@ a:hover{
 	color: #e3e3e3;
 	border: 0;
 	background-color : transparent;
+}
+
+.hacky-fix {
+	position:relative;
+	display: inline-block;
+	vertical-align: top;
 }

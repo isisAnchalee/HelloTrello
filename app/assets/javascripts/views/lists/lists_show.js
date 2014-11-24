@@ -2,6 +2,8 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
 
   template: JST['lists/list-show'],
 
+  className: 'hacky',
+
   initialize: function(){
   	this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model.cards(), 'add', this.addEntry)
@@ -9,7 +11,7 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
     this.model.cards().each(this.addEntry.bind(this))    
   },
 
-  events:{
+  events: {
     "dblclick .list-title": "editListTitle",
     "blur .listTitleEdit": "saveListTitleEdit",
     "click .add-card": "createNewCardForm",
@@ -24,25 +26,6 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
     $currentTarget.replaceWith(string)
   },
 
-  // saveListTitleEdit: function(event){
-
-  //   var title = this.$('.listTitleEdit').val();
-  //   var list_id = this.$('.listTitleEdit').data("id");
-    
-  //   var theUrl = "api/lists/" + this.model.id;
-  //   $.ajax({
-  //     url: theUrl ,
-  //     type: "PUT",
-  //     data: { list: { title: title, id: list_id, board_id: this.model.get("board_id") } },
-  //     dataType: 'JSON',
-  //     success: function(resp) {
-  //       var $replaceItem = $('.listTitleEdit');
-  //       var string = '<span class="list-title">' + resp.title + '</span>'
-  //       $replaceItem.replaceWith(string);
-  //     }
-  //   })
-  // },
-
   saveListTitleEdit: function(event){
     var title = this.$('.listTitleEdit').val();
     this.model.set('title', title);
@@ -50,6 +33,11 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
       success: function(){
       }.bind(this)
     });
+  },
+
+  onRender: function () {
+    Backbone.CompositeView.prototype.onRender.call(this);
+    this.$('.list-cards').sortable({connectWith: '.list-cards'});
   },
 
   deleteCard: function(){
@@ -102,11 +90,10 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
   },
 
   removeCard: function(card){
-    console.log("REMOVE")
     var cardSubview =
-    _(this.subviews()['.list-cards']).find(function(subview){
-      return subview.model == card;
-    });
+      _(this.subviews()['.list-cards']).find(function(subview){
+        return subview.model == card;
+      });
 
     this.removeSubview(".list-cards", cardSubview);
   },
@@ -127,5 +114,4 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
 
     this.addSubview(".list-cards", newSubview);
   }
-
 });
