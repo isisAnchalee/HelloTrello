@@ -49,11 +49,29 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
 
   createNewCard: function(event){
     event.preventDefault();
+    var that = this;
     var title = this.$(".new-card-title").val();
 
     var newCard = new TrelloClone.Models.Card({
-
+      title: title,
+      list_id: this.model.id,
+      description: 'fill in later'
     });
+
+    newCard.save({}, {
+      success: function(){
+        that.model.cards().add(newCard);
+        that.addCardDiv();
+        that.$('.new-card-btn').remove();
+        that.$('.add-card-close-btn').remove();
+      }
+    });
+  },
+
+  addCardDiv: function(){
+    var addCardPaneString = "<div class='add-card'>Add a card... </div>";
+    this.$('.new-card-title').replaceWith(addCardPaneString);
+
   },
 
   closeNewCardPane: function(event){
