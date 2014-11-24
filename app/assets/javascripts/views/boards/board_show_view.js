@@ -3,7 +3,7 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
   template: JST['boards/show'],
 
   initialize:function(options){
-    this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model, 'all', this.render);
     this.listenTo(this.model.lists(), 'add', this.addEntry)
 
     this.model.lists().each(this.addEntry.bind(this))
@@ -28,20 +28,9 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
     var that = this;
 
     var title = $('.titleEdit').val();
-    var board_id = $('.titleEdit').data("id");
-    
-    var theUrl = "api/boards/" + this.model.id;
-    $.ajax({
-      url: theUrl ,
-      type: "PUT",
-      data: { board: { title: title }},
-      dataType: 'JSON',
-      success: function(resp) {
-        var $replaceItem = $('.titleEdit');
-        var string = '<button class="btn btn-primary funbtn">' + resp.title + '</button>'
-        $replaceItem.replaceWith(string);
-      }
-    })
+    this.model.set('title', title);
+    this.model.save({}, {success: function(model){
+    }.bind(this)});
   },
 
 
@@ -62,6 +51,7 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
   },
 
   addEntry: function(list){
+    console.log('rendering')
     var newSubview = new TrelloClone.Views.ListsShow({ 
       board: this.board,
       model: list 

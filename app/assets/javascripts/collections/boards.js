@@ -4,7 +4,7 @@ TrelloClone.Collections.Boards = Backbone.Collection.extend({
   model: TrelloClone.Models.Board,
 
   getOrFetch: function(id){
-  	var targetBoard = this.get('id');
+  	var targetBoard = this.get(id);
   	if (targetBoard){
   		targetBoard.fetch();
   		return targetBoard;

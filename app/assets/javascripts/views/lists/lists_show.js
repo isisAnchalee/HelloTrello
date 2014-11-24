@@ -10,20 +10,20 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
 
   events:{
     "dblclick .list-title": "editListTitle",
-    "blur .titleEdit": "saveListTitleEdit",
+    "blur .listTitleEdit": "saveListTitleEdit",
     "click .add-card": "createNewCard"
   },
 
   editListTitle: function(event) {
     var $currentTarget = $(event.currentTarget);
-    var string = '<input type="text" name="list[title]" value="' + this.model.get("title") +'" data-id="' + this.model.id + '" class="titleEdit">'
+    var string = '<input type="text" name="list[title]" value="' + this.model.get("title") +'" data-id="' + this.model.id + '" class="listTitleEdit">'
     $currentTarget.replaceWith(string)
   },
 
   saveListTitleEdit: function(event){
 
-    var title = $('.titleEdit').val();
-    var list_id = $('.titleEdit').data("id");
+    var title = this.$('.listTitleEdit').val();
+    var list_id = this.$('.listTitleEdit').data("id");
     
     var theUrl = "api/lists/" + this.model.id;
     $.ajax({
@@ -32,7 +32,7 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
       data: { list: { title: title, id: list_id, board_id: this.model.get("board_id") } },
       dataType: 'JSON',
       success: function(resp) {
-        var $replaceItem = $('.titleEdit');
+        var $replaceItem = $('.listTitleEdit');
         var string = '<span class="list-title">' + resp.title + '</span>'
         $replaceItem.replaceWith(string);
       }
@@ -40,8 +40,7 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
   },
 
   createNewCard: function(event){
-    var newCardString = "<input type='text' name='card[title]' value='Title'> <textarea name='card[description]'></textarea> <input type='submit' value='Submit'>"
-    console.log(event.currentTarget);
+    var newCardString = "<input type='text' class='new-card-title' name='card[title]' value='Title'> <textarea class='new-card-description' name='card[description]'></textarea> <input type='submit' class='btn btn-success' value='Submit'>"
     $currentTarget = $(event.currentTarget);
     $currentTarget.replaceWith(newCardString);
   },

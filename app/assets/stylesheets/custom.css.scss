@@ -107,6 +107,7 @@ a:hover{
 .card-pane{
 	margin-top:4px;
 	padding-top:10px;
+	border: 0;
 }
 .card-pane:hover{
 	background-color:#f0f0f0;
@@ -297,5 +298,21 @@ a:hover{
 }
 .box{
 	height:100vh;
+}
 
+.new-card-title{
+	width:99%;
+	margin: 0 auto;
+	margin-top:7px;
+	padding:3px;
+	border: 0;
+}
+
+.new-card-description{
+	margin-top:3px;
+	width:99%;
+	margin-bottom: 4px;
+	max-height: 162px;
+	min-height: 54px;
+	border: 0;
 }

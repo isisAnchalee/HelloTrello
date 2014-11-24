@@ -15,7 +15,7 @@ TrelloClone.Routers.Router = Backbone.Router.extend({
 		});
 		$('.box').css('display','none');
 		$('body').css('background-color', '#f9f9f9');
-		
+
 		this._swapView(indexView);
 	},
 
