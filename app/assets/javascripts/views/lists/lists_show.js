@@ -11,7 +11,9 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
   events:{
     "dblclick .list-title": "editListTitle",
     "blur .listTitleEdit": "saveListTitleEdit",
-    "click .add-card": "createNewCard"
+    "click .add-card": "createNewCardForm",
+    "click .new-card-btn": "createNewCard",
+    "click .add-card-close-btn": "closeNewCardPane"
   },
 
   editListTitle: function(event) {
@@ -39,10 +41,28 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
     })
   },
 
-  createNewCard: function(event){
-    var newCardString = "<textarea class='new-card-description' name='card[title]'></textarea> <input type='submit' class='btn btn-success new-card-btn' value='Submit'> <button class='add-card-close-btn'> <span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button>"
+  createNewCardForm: function(event){
+    var newCardString = "<form><textarea class='new-card-title' name='card[title]'></textarea> <input type='submit' class='btn btn-success new-card-btn' value='Submit'> <button class='add-card-close-btn'> <span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button></form>"
     $currentTarget = $(event.currentTarget);
     $currentTarget.replaceWith(newCardString);
+  },
+
+  createNewCard: function(event){
+    event.preventDefault();
+    var title = this.$(".new-card-title").val();
+
+    var newCard = new TrelloClone.Models.Card({
+
+    });
+  },
+
+  closeNewCardPane: function(event){
+    event.preventDefault();
+    var addCardPaneString = "<div class='add-card'>Add a card... </div>";
+    this.$('.new-card-title').remove();
+    this.$('.new-card-btn').remove();
+    $currentTarget = $(event.currentTarget);
+    $currentTarget.replaceWith(addCardPaneString);
   },
 
   render:function(){
