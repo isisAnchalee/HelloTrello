@@ -30,7 +30,7 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
     $.ajax({
       url: theUrl ,
       type: "PUT",
-      data: { list: { title: title, id: list_id, board_id: this.model.board.id } },
+      data: { list: { title: title, id: list_id, board_id: this.model.get("board_id") } },
       dataType: 'JSON',
       success: function(resp) {
         var $replaceItem = $('.titleEdit');
