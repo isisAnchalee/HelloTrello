@@ -142,18 +142,21 @@ a:hover{
 	font-weight:bold;
 	font-size:1.3em;
 	color:white;
-
 }
+
+.center-logo{
+	position:fixed;
+	left:50%;
+	transform: translateX(-50%);
+}
+
 .logo{
 	opacity: 0.5;
-	width:auto;
-	margin:0 auto;
 	margin-top:7px;
-
 }
 
 .navbar-header{
-	width: 500px;
+	width: 100%;
 	margin: 0 auto !important;
 	position: relative;
 
