@@ -1,18 +1,19 @@
 <div id="show-main">
 	<div class="container">
-			<button class="btn btn-primary funbtn"> 
-				<%= board.get("title") %>
-			</button>
-			
-			<br>
+
 			<div class="new-list" data-toggle="modal" data-target="#new-list">
 				Add a list...
 			</div>
+			<button class="btn btn-primary funbtn"> 
+				<%= board.get("title") %>
+			</button>
 			<span class="glyphicon glyphicon-star-empty star"></span>
+			<button class="board-delete-button btn btn-primary navbar-btn custom-button" data-id="<%= board.id%>">Delete Board </button>
 
 		<div class="board-lists clearfix">
 		</div>
-			<button class="board-delete-button btn btn-primary navbar-btn custom-button" data-id="<%= board.id%>">Delete Board </button>
+
+
 	</div>
 </div>
 

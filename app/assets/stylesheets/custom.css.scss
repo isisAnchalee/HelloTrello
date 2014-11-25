@@ -9,7 +9,7 @@ html{
 }
 body{
     height:100% ;
-    min-width: 900px;
+    min-width: 880px;
 }
 
 a:hover{
@@ -172,6 +172,7 @@ a:hover{
 .star{
 	color:white;
 	top:-1px;
+	margin-right:14px;
 	position:relative;
 }
 
@@ -229,11 +230,20 @@ a:hover{
 }
 
 .board-delete-button{
+	background-color: #0e74af !important;
+	border:none;
+	color:white;
+	float:right;
+	font-weight:bold;
+	font-size:1.1em;
 	position:relative;
-	margin-top: -27px !important;
-	margin-bottom: -9px !important;
+	top:-1px;
+	left:-12px;
 }
 
+.board-delete-button:hover{
+	background-color: #0c6599 !important;
+}
 .navbar{
 	min-height:30px !important;
   height: 38px !important;
