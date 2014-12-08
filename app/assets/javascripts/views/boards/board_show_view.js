@@ -3,19 +3,27 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
   template: JST['boards/show'],
 
   initialize:function(options){
+    this.$el.data('id', this.model.id);
+    this.collection = this.model.lists();
     this.listenTo(this.model, 'all', this.render);
-    this.listenTo(this.model.lists(), 'add', this.addEntry)
+    this.listenTo(this.collection, 'add', this.addEntry)
+    this.collection.each(this.addEntry.bind(this))
+  },
 
-    this.model.lists().each(this.addEntry.bind(this))
+  orderOptions: {
+    modelElement: '.list-heading',
+    modelName: 'list',
+    subviewContainer: '.board-lists'
   },
 
   events:{
     "click .board-delete-button": "deleteBoard",
-    "click .submit-new-list" : "newList",
+    "click .submit-new-list": "newList",
     'submit form': 'newList',
     "click .delete-list": "deleteList",
     "dblclick .funbtn": "editBoardTitle",
-    "blur .titleEdit": "saveRecentTitleEdit"
+    "blur .titleEdit": "saveRecentTitleEdit",
+    "sortstop": "saveOrds"
   },
 
   editBoardTitle: function(event) {
@@ -54,7 +62,6 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
   },
 
   addEntry: function(list){
-    console.log('rendering')
     var newSubview = new TrelloClone.Views.ListsShow({ 
       board: this.board,
       model: list 
@@ -107,3 +114,4 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
 
 });
 
+_.extend(TrelloClone.Views.BoardShowView.prototype, TrelloClone.Utils.OrdView);

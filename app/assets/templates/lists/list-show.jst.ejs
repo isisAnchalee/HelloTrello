@@ -1,5 +1,9 @@
-		 <span class="list-title "><%= list.escape("title") %></span> 
-		 <button class="delete-list"> <span data-id="<%= list.id %>" class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+<div class='list-heading' data-list-id="<%= list.id %>">
+	<span class="list-title "><%= list.escape("title") %></span>
+	 <button class="delete-list"> <span data-id="<%= list.id %>" class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+</div>
+
+
 	<div class="list-cards">
 	</div>
 	<div data-id="<%= list.id %>" class="add-card">Add a card... </div>
