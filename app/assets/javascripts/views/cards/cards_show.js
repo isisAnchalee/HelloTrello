@@ -20,7 +20,7 @@ TrelloClone.Views.CardsShow = Backbone.CompositeView.extend({
     this.$el.html(content);
     return this;
   },
-  
+
   showModal: function () {
     this.modalView = this.modalView ||
       new TrelloClone.Views.CardModal({ model: this.model });

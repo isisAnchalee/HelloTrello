@@ -136,7 +136,8 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
       ord: newOrd
     });
     cardClone.save();
-    this.collection.add(cardClone, {silent: true});
+    this.collection.add(cardClone);
+    //removed silent: true
     this.saveCards(event);
   },
 
