@@ -409,9 +409,7 @@ ul{
   z-index: 1032;
   background-color: rgb(240, 240, 240);
   border-radius: 3px;
-  padding: 15px;
-
-   
+  padding: 15px;   
 }
 
 .card-modal-dismiss {
@@ -433,4 +431,25 @@ ul{
 
 .board-lists{
 	width: 1500px; 
+}
+
+.modal-items li{
+	width:150px;
+	padding:4px;
+}
+
+.modal-items{
+	position:relative;
+	left:150px;
+	top: -100px;
+}
+
+.todo{
+	font-weight: bold;
+	position:relative;
+	left:60px;
+}
+
+.modal-list{
+	margin-bottom:-80px;
 }
