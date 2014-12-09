@@ -1,9 +1,8 @@
 <nav class="navbar navbar-default customnav" role="navigation">
-<div class="container-fluid">
     <a class='center-logo' href="#"><img class="logo" src="http://imageshack.com/a/img903/2138/76SvlY.png"></a>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-    <ul class="nav navbar-nav navbar-left">
+  <div class="pull-left">
+    <ul class="sign-out-btn">
     <% if signed_in? %>
       <li><%= button_to "Sign out", session_url, method: :delete, class: "btn btn-primary navbar-btn custom-button" %></li>
     <% else %>
@@ -12,6 +11,5 @@
     <% end %>
     </ul>
   </div>
-</div>
 </nav>
 

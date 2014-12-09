@@ -26,6 +26,10 @@ a:hover{
 	width: 100% !important;
 }
 
+ul{
+	list-style: none;
+}
+
 .list-show{
 	width:150px;
 	float:left;
@@ -191,6 +195,11 @@ a:hover{
 	margin-top:-5px;
 }
 
+.sign-out-btn{
+	position:relative;
+	right:30px;
+}
+
 .funbtn{
 	background-color: #0e74af !important;
 	border:none;
@@ -259,9 +268,11 @@ a:hover{
 .board-delete-button:hover{
 	background-color: #0c6599 !important;
 }
+
 .navbar{
 	min-height:30px !important;
   height: 38px !important;
+  min-width:500px !important;
   margin-bottom: 0 !important;
 }
 
