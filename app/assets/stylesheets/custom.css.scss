@@ -27,7 +27,7 @@ a:hover{
 }
 
 .list-show{
-	width:23%;
+	width:150px;
 	float:left;
 	margin-right:10px;
 	font-size: 1em;
@@ -39,7 +39,7 @@ a:hover{
 }
 
 .new-list{
-	width:23%;
+	width:200px;
 	position:relative;
 	top:-4px;
 	display: inline-block;
@@ -158,7 +158,9 @@ a:hover{
 	opacity: 0.5;
 	margin-top:7px;
 }
-
+.navbar{
+	width:1600px;
+}
 .navbar-header{
 	width: 100%;
 	margin: 0 auto !important;
@@ -412,4 +414,12 @@ a:hover{
 
 .glyphicon-remove{
 	z-index: 1000;
+}
+
+.outer-board-lists{
+	overflow: scroll-x; width: 100%; height: 100%;
+}
+
+.board-lists{
+	width: 1500px; 
 }
