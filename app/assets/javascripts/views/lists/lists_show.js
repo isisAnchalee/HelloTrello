@@ -51,7 +51,8 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
     this.$('.list-cards').sortable({connectWith: '.list-cards'});
   },
 
-  deleteCard: function(){
+  deleteCard: function(event){
+    event.preventDefault();
     var $currentTarget = $(event.target);
     var cardId = $currentTarget.data("id");
     var card = this.model.cards().get(cardId);

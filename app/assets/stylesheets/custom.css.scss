@@ -25,6 +25,7 @@ a:hover{
 .container{
 	width: 100% !important;
 }
+
 .list-show{
 	width:23%;
 	float:left;
@@ -51,6 +52,7 @@ a:hover{
 	margin-top:5px;
 	min-width:150px;
 }
+
 .new-list:hover{
 	background-color: #0a517b;
 }
@@ -96,6 +98,7 @@ a:hover{
 	font-weight:normal !important;
 	color: #8c8c8c !important;
 }
+
 .new-board:hover{
 	background-color: #cccccc !important;
 }
@@ -195,9 +198,11 @@ a:hover{
 	margin-top:-10px;
 	margin-left:-13px;
 }
+
 .funbtn:hover{
 	background-color: #0c6599 !important;
 }
+
 .board-link{
 	text-decoration:none;
 	color:white;
@@ -211,6 +216,10 @@ a:hover{
 	color:#8c8c8c;
 	font-size:0.8em;
 	margin-top:10px;
+}
+
+.add-card:hover{
+	cursor: pointer;
 }
 
 .custom-button{
@@ -335,7 +344,7 @@ a:hover{
 	border: 0;
 }
 
-.new-card-btn{
+.new-card-btn, .add-item-btn{
 	padding:5px !important;
 }
 
@@ -399,4 +408,8 @@ a:hover{
   &:hover {
     text-decoration: none;
   }
+}
+
+.glyphicon-remove{
+	z-index: 1000;
 }
