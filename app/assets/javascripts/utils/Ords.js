@@ -16,6 +16,8 @@ TrelloClone.Utils.OrdView = {
       var $itemElement = $(element),
           itemId = $itemElement.data(idAttribute);
       var item = collection.get(itemId);
+
+      debugger;
       if (item.get('ord') === index) {
         return;
       }
