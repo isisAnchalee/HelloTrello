@@ -1,5 +1,6 @@
 TrelloClone.Views.ItemsList = Backbone.CompositeView.extend({
   className: 'modal-list',
+  
   initialize: function () {
     this.itemFormView = new TrelloClone.Views.ItemForm({
       model: new TrelloClone.Models.Item(),

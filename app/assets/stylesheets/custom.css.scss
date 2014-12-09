@@ -403,7 +403,7 @@ ul{
 
 .card-modal {
 	margin-top:60px;
-  width: 50%;
+  width: 360px;
   position: absolute;
   left: 25%;
   z-index: 1032;
@@ -434,13 +434,14 @@ ul{
 }
 
 .modal-items li{
-	width:150px;
+	width:165px;
 	padding:4px;
+	word-wrap: break-word;
 }
 
 .modal-items{
 	position:relative;
-	left:150px;
+	left:120px;
 	top: -100px;
 }
 
@@ -451,5 +452,5 @@ ul{
 }
 
 .modal-list{
-	margin-bottom:-80px;
+	margin-bottom:-35px;
 }

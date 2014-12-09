@@ -90,9 +90,6 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
             Backbone.history.fragment = null;
             Backbone.history.navigate(newFragment, true);
         }
-      },
-      error: function(model, resp){
-        // console.log(resp.responseText)
       }
     });
   },
