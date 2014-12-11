@@ -4,7 +4,7 @@ TrelloClone.Views.CardsShow = Backbone.CompositeView.extend({
 	className:'card-display',
 
   events: {
-    'click:not(.delete-card)': 'showModal'
+    'click .card-pane': 'showModal'
   },
 
   attributes: function() {
