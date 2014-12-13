@@ -1,20 +1,29 @@
 
+
 <div class="box">
   <%= render partial: "layouts/errors" %>
 	<div class="welcome-wrapper">
 		<div class="splash-hello"> Hello  </div>
 				<div class="welcome-message"> Just glorifying your todo list.</div>
 		<div class="login-form ">
-			<form action="/session" method="post">
-			  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-			  <label>
-			    <input name="user[email]" class="custom-login email-input" value="Username" type="text"><br>
-			  </label><br>
-			  <label>
-			    <input name="user[password]" class="custom-login password-input" value="Password" type="password"><br>
-			  </label><br>
-			  <input type="submit" value="Submit" class="btn btn-primary custom-login"><br>
-			</form>
+			<div class="login-wrapper">
+				<form action="/session" method="post">
+				  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+				  <label>
+				    <input name="user[email]" class="custom-login email-input" value="Username" type="text"><br>
+				  </label><br>
+				  <label>
+				    <input name="user[password]" class="custom-login password-input" value="Password" type="password"><br>
+				  </label><br>
+				  <input type="submit" value="Submit" class="btn btn-primary custom-login"><br>
+				</form>
+		  	<form class="login-form guest-log-in" action="/session" method="post">
+		    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		    <input type="hidden" name="user[username]" value="guest_user">
+		    <input type="hidden" name="user[password]" value="hellotrello">
+		    <input type="submit" value="Guest Login" class="btn btn-default guest-login">
+		    </form>
+			</div>
 		</div>
 	</div>
 </div>

@@ -19,6 +19,7 @@ TrelloClone.Views.ItemForm = Backbone.View.extend({
       title: title,
       card_id: this.collection.card.id
     };
+    
     this.collection.create(params, { wait: true });
     this.render();
   }

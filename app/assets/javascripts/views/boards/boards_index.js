@@ -20,7 +20,6 @@ TrelloClone.Views.BoardsIndex = Backbone.CompositeView.extend({
 
     this.$el.html(content);
     this.attachSubviews();
-
     return this
   },
 
@@ -42,11 +41,7 @@ TrelloClone.Views.BoardsIndex = Backbone.CompositeView.extend({
         $('#newboard').modal('hide');
         $('div.modal-backdrop').remove();
 
-        var newFragment = Backbone.history.getFragment($(this).attr('href'));
-        if (Backbone.history.fragment == newFragment) {
-            Backbone.history.fragment = null;
-            Backbone.history.navigate(newFragment, true);
-        }
+        that.navigatePage(that);
       }
     });
   }

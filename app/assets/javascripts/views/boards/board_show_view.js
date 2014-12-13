@@ -61,14 +61,6 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
     return this
   },
 
-  navigatePage:function(ctx){
-    var newFragment = Backbone.history.getFragment($(ctx).attr('href'));
-    if (Backbone.history.fragment == newFragment) {
-        Backbone.history.fragment = null;
-        Backbone.history.navigate(newFragment, true);
-    }
-  },
-  
   addEntry: function(list){
     var newSubview = new TrelloClone.Views.ListsShow({ 
       board: this.board,
@@ -96,7 +88,6 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
       }
     });
   },
-
 
   deleteList: function(){
     var $currentTarget = $(event.target),

@@ -300,12 +300,19 @@ ul{
 	margin:0 auto;
 }
 
-.custom-login{
+.custom-login, .guest-login{
 	width:200px;
 	height:40px;
 	font-weight:normal;
 	font-family: Helvetica Neue;
 	font-size:1.1em;
+	opacity: 0.9;
+	padding: 0px;
+}
+
+.guest-login{
+	position:relative;
+	top:-97px;
 }
 
 .welcome-wrapper {
@@ -448,7 +455,9 @@ ul{
 	left:120px;
 	top: -100px;
 }
-
+.signup-form{
+		background-color: rgba(255, 255, 255, 0.3); 
+}
 .todo{
 	font-weight: bold;
 	position:relative;
@@ -457,4 +466,10 @@ ul{
 
 .modal-list{
 	margin-bottom:-35px;
+}
+
+.login-wrapper{
+	width: 200px !important;
+	margin: 0 auto;
+	background-color: rgba(255, 255, 255, 0.3); 
 }

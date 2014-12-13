@@ -12,6 +12,7 @@ TrelloClone.Utils.OrdView = {
     var itemElements = this.$(this.orderOptions.modelElement),
         idAttribute = this.orderOptions.modelName + '-id',
         collection = this.collection;
+
     itemElements.each(function(index, element) {
       var $itemElement = $(element),
           itemId = $itemElement.data(idAttribute);
@@ -26,6 +27,7 @@ TrelloClone.Utils.OrdView = {
 
       item.save();
     }.bind(this));
+    
     collection.sort();
     if (this.orderOptions.subviewContainer) {
       this.resortSubviews();
