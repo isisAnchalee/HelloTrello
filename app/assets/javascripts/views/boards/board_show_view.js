@@ -61,6 +61,14 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
     return this
   },
 
+  navigatePage:function(ctx){
+    var newFragment = Backbone.history.getFragment($(ctx).attr('href'));
+    if (Backbone.history.fragment == newFragment) {
+        Backbone.history.fragment = null;
+        Backbone.history.navigate(newFragment, true);
+    }
+  },
+  
   addEntry: function(list){
     var newSubview = new TrelloClone.Views.ListsShow({ 
       board: this.board,
@@ -84,28 +92,20 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
         $('#newboard').modal('hide');
         $('div.modal-backdrop').remove();
 
-        var newFragment = Backbone.history.getFragment($(this).attr('href'));
-        if (Backbone.history.fragment == newFragment) {
-            Backbone.history.fragment = null;
-            Backbone.history.navigate(newFragment, true);
-        }
+       that.navigatePage(that);
       }
     });
   },
 
 
-
   deleteList: function(){
-    var $currentTarget = $(event.target)
-                listId = $currentTarget.data('id')
+    var $currentTarget = $(event.target),
+                  that = this,
+                listId = $currentTarget.data('id'),
                   list = this.model.lists().get(listId);
 
     list.destroy();
-    var newFragment = Backbone.history.getFragment($(this).attr('href'));
-    if (Backbone.history.fragment == newFragment) {
-        Backbone.history.fragment = null;
-        Backbone.history.navigate(newFragment, true);
-    }
+    that.navigatePage(that);
   }
 
 });
