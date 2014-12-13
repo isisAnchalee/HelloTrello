@@ -19,7 +19,6 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
   events:{
     "click .board-delete-button": "deleteBoard",
     "click .submit-new-list": "newList",
-    'submit form': 'newList',
     "click .delete-list": "deleteList",
     "dblclick .funbtn": "editBoardTitle",
     "blur .titleEdit": "saveRecentTitleEdit",
@@ -74,10 +73,9 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
   newList: function(event){
     var $currentTarget = $(event.target),
                   that = this,
-               boardId = $currentTarget.data('id'),
                  title = $('#list-title').val();
 
-    var newList = new TrelloClone.Models.List({ title: title, board_id: boardId }, { board: this.model });
+    var newList = new TrelloClone.Models.List({ title: title, board_id: this.model.id }, { board: this.model });
 
     newList.save({}, {
       success: function(){
@@ -94,6 +92,8 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
       }
     });
   },
+
+
 
   deleteList: function(){
     var $currentTarget = $(event.target)

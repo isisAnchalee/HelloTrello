@@ -7,10 +7,10 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
   initialize: function(){
     this.$el.data('id', this.model.id);
     this.collection = this.model.cards();
-    this.listenTo(this.collection, 'add', this.addEntry)
-    this.listenTo(this.collection, 'remove', this.removeCard)
+    this.listenTo(this.collection, 'add', this.addEntry);
+    this.listenTo(this.collection, 'remove', this.removeCard);
     this.listenTo(this.model, 'all', this.render);
-    this.collection.each(this.addEntry.bind(this))    
+    this.collection.each(this.addEntry.bind(this));
   },
 
   orderOptions: {
@@ -25,16 +25,14 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
     "click .add-card": "createNewCardForm",
     "click .new-card-btn": "createNewCard",
     "click .add-card-close-btn": "closeNewCardPane",
-    // "click .delete-card": "deleteCard",
     "sortreceive": "receiveCard",  
-    // "sortremove": "removeSortingCard",
     "sortstop": "saveCards"
   },
 
   editListTitle: function(event) {
     var $currentTarget = $(event.currentTarget),
                 string = '<input type="text" name="list[title]" value="' + this.model.get("title") +'" data-id="' + this.model.id + '" class="listTitleEdit">';
-    $currentTarget.replaceWith(string)
+    $currentTarget.replaceWith(string);
   },
 
   saveListTitleEdit: function(event){
@@ -46,7 +44,7 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
       success: function(){
       }.bind(this)
     });
-    listTitle.html()
+    listTitle.html();
   },
 
   onRender: function () {
@@ -63,7 +61,7 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
   },
 
   createNewCardForm: function(event){
-    var newCardString = "<form><textarea class='new-card-title' name='card[title]'></textarea> <input type='submit' class='btn btn-success new-card-btn' value='Submit'> <button class='add-card-close-btn'> <span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button></form>"
+    var newCardString = "<form><textarea class='new-card-title' name='card[title]'></textarea> <input type='submit' class='btn btn-success new-card-btn' value='Submit'> <button class='add-card-close-btn'> <span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button></form>";
        $currentTarget = $(event.currentTarget);
 
     $currentTarget.replaceWith(newCardString);
@@ -132,18 +130,6 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
   },
 
   receiveCard: function(event, ui) {
-    // var $cardDisplay = ui.item,
-    //     cardId = $cardDisplay.data('card-id'),
-    //     newOrd = $cardDisplay.index();
-
-    // var cardClone = new TrelloClone.Models.Card({
-    //   id: cardId,
-    //   list_id: this.model.id,
-    //   ord: newOrd
-    // });
-
-    // cardClone.save();
-    // this.collection.add(cardClone);
     this.saveCards(event);
   },
 
@@ -152,8 +138,6 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
         cardId = $cardDisplay.data('card-id'),
         cards =  this.collection,
         cardToRemove = cards.get(cardId);
-
-    // cards.remove(cardToRemove);
   },
 
   saveCards: function(event) {

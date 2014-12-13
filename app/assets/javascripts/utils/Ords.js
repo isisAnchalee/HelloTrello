@@ -9,14 +9,12 @@ TrelloClone.Utils.OrdView = {
   },
   
   saveOrds: function() {
-    // debugger;
     var itemElements = this.$(this.orderOptions.modelElement),
         idAttribute = this.orderOptions.modelName + '-id',
         collection = this.collection;
     itemElements.each(function(index, element) {
       var $itemElement = $(element),
           itemId = $itemElement.data(idAttribute);
-      // var item = collection.get(itemId);
       var item = new this.collection.model({
         id: itemId,
         list_id: this.model.id,
@@ -25,9 +23,7 @@ TrelloClone.Utils.OrdView = {
       }, {
         board: this.model
       });
-      // if (item.get('ord') === index) {
-      //   return;
-      // }
+
       item.save();
     }.bind(this));
     collection.sort();
