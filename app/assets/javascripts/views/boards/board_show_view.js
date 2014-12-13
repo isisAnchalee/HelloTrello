@@ -27,8 +27,8 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
   },
 
   editBoardTitle: function(event) {
-    var $currentTarget = $(event.currentTarget);
-    var string = '<input type="text" name="post[title]" value="' + this.model.get("title") +'" data-id="' + this.model.id + '" class="titleEdit">'
+    var $currentTarget = $(event.currentTarget),
+                string = '<input type="text" name="post[title]" value="' + this.model.get("title") +'" data-id="' + this.model.id + '" class="titleEdit">';
     $currentTarget.replaceWith(string)
   },
 
@@ -44,9 +44,9 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
   },
 
   deleteBoard: function(){
-    var $currentTarget = $(event.target);
-    var boardId = $currentTarget.data('id');
-    var board = TrelloClone.boards.get(boardId);
+    var $currentTarget = $(event.target),
+               boardId = $currentTarget.data('id'),
+                 board = TrelloClone.boards.get(boardId);
 
     board.destroy();
     Backbone.history.navigate("#", { trigger: true })
@@ -54,6 +54,7 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
 
   render: function(){
     var content = this.template({ board: this.model });
+
     this.$el.html(content);
     this.attachSubviews();
     this.onRender();
@@ -71,10 +72,10 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
   },
 
   newList: function(event){
-    var that = this;
-    var $currentTarget = $(event.target);
-    var boardId = $currentTarget.data('id');
-    var title = $('#list-title').val();
+    var $currentTarget = $(event.target),
+                  that = this
+               boardId = $currentTarget.data('id')
+                 title = $('#list-title').val();
 
     var newList = new TrelloClone.Models.List({ title: title, board_id: boardId }, { board: this.model });
 
@@ -95,9 +96,9 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
   },
 
   deleteList: function(){
-    var $currentTarget = $(event.target);
-    var listId = $currentTarget.data('id');
-    var list = this.model.lists().get(listId);
+    var $currentTarget = $(event.target)
+                listId = $currentTarget.data('id')
+                  list = this.model.lists().get(listId);
 
     list.destroy();
     var newFragment = Backbone.history.getFragment($(this).attr('href'));

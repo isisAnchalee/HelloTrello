@@ -6,6 +6,7 @@ TrelloClone.Views.ItemsList = Backbone.CompositeView.extend({
       model: new TrelloClone.Models.Item(),
       collection: this.collection
     });
+    
     this.addSubview('.item-list-form', this.itemFormView);
     this.collection.each(this.addItemView.bind(this));
     this.listenTo(this.collection, 'add', this.addItemView);
