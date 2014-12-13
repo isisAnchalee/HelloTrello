@@ -4,13 +4,19 @@ TrelloClone.Views.CardsShow = Backbone.CompositeView.extend({
 	className:'card-display',
 
   events: {
-    'click *:not(button, button *)': 'showModal'
+    'click *:not(button, button *)': 'showModal',
+    'click .delete-card': 'deleteCard'
   },
 
   attributes: function() {
     return {
       'data-card-id': this.model.id
     };
+  },
+
+  deleteCard: function(event){
+    event.preventDefault();
+    this.model.destroy();
   },
 
   render: function () {

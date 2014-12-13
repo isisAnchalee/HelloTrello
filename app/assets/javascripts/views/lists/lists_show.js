@@ -25,9 +25,9 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
     "click .add-card": "createNewCardForm",
     "click .new-card-btn": "createNewCard",
     "click .add-card-close-btn": "closeNewCardPane",
-    "click .delete-card": "deleteCard",
-    "sortreceive": "receiveCard",
-    "sortremove": "removeSortingCard",
+    // "click .delete-card": "deleteCard",
+    "sortreceive": "receiveCard",  
+    // "sortremove": "removeSortingCard",
     "sortstop": "saveCards"
   },
 
@@ -65,7 +65,7 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
   createNewCardForm: function(event){
     var newCardString = "<form><textarea class='new-card-title' name='card[title]'></textarea> <input type='submit' class='btn btn-success new-card-btn' value='Submit'> <button class='add-card-close-btn'> <span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button></form>"
        $currentTarget = $(event.currentTarget);
-       
+
     $currentTarget.replaceWith(newCardString);
   },
 
@@ -132,17 +132,18 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
   },
 
   receiveCard: function(event, ui) {
-    var $cardDisplay = ui.item,
-        cardId = $cardDisplay.data('card-id'),
-        newOrd = $cardDisplay.index() + 1;
+    // var $cardDisplay = ui.item,
+    //     cardId = $cardDisplay.data('card-id'),
+    //     newOrd = $cardDisplay.index();
 
-    var cardClone = new TrelloClone.Models.Card({
-      id: cardId,
-      list_id: this.model.id,
-      ord: newOrd
-    });
-    cardClone.save();
-    this.collection.add(cardClone);
+    // var cardClone = new TrelloClone.Models.Card({
+    //   id: cardId,
+    //   list_id: this.model.id,
+    //   ord: newOrd
+    // });
+
+    // cardClone.save();
+    // this.collection.add(cardClone);
     this.saveCards(event);
   },
 
@@ -152,14 +153,11 @@ TrelloClone.Views.ListsShow= Backbone.CompositeView.extend({
         cards =  this.collection,
         cardToRemove = cards.get(cardId);
 
-    cards.remove(cardToRemove);
-
-    //something in this is removing the subview making it vanish, and creating a new subview
-    //so that it appears on the bottom
+    // cards.remove(cardToRemove);
   },
 
   saveCards: function(event) {
-    event.stopPropagation(); 
+    event.stopPropagation();
     this.saveOrds();
   }
 });
