@@ -4,7 +4,7 @@ TrelloClone.Views.CardsShow = Backbone.CompositeView.extend({
 	className:'card-display',
 
   events: {
-    'click .card-pane': 'showModal'
+    'click *:not(button, button *)': 'showModal'
   },
 
   attributes: function() {
@@ -21,7 +21,9 @@ TrelloClone.Views.CardsShow = Backbone.CompositeView.extend({
     return this;
   },
 
-  showModal: function () {
+  showModal: function (event) {
+    if (event && event.target && $(event.target).is('button, button *')) return;
+
     this.modalView = this.modalView ||
       new TrelloClone.Views.CardModal({ model: this.model });
     $('body').prepend(this.modalView.render().$el);

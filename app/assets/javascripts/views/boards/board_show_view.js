@@ -43,7 +43,6 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
 
   },
 
-
   deleteBoard: function(){
     var $currentTarget = $(event.target);
     var boardId = $currentTarget.data('id');
