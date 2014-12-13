@@ -40,6 +40,7 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
         success: function(model){
       }.bind(this)
     });
+
   },
 
 
@@ -93,8 +94,6 @@ TrelloClone.Views.BoardShowView = Backbone.CompositeView.extend({
       }
     });
   },
-
-//TODO change to delete subview
 
   deleteList: function(){
     var $currentTarget = $(event.target);

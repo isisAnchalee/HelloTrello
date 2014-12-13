@@ -40,7 +40,7 @@ module Api
     end
 
     def list_params
-      params.require(:list).permit(:title, :board_id, :ord)
+      params.require(:list).permit(:title,:updated_at, :created_at, :id, :board_id, :ord)
     end
   end
 end
