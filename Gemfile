@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ ruby '2.0.0'
 gem 'backbone-on-rails'
 gem 'bcrypt'
 gem 'bootstrap-sass'
@@ -13,6 +13,8 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
 gem 'faker'
+gem 'rails_12factor'
+gem 'unicorn'
 
 group :doc do
   gem 'sdoc', require: false
