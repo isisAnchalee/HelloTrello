@@ -161,14 +161,17 @@ ul{
 	opacity: 0.5;
 	margin-top:7px;
 }
+
 .navbar{
 	width:1600px;
+	min-width:700px;
 }
+
 .navbar-header{
 	width: 100%;
 	margin: 0 auto !important;
 	position: relative;
-
+	min-width:700px;
 }
 
 .logo:hover{
@@ -276,7 +279,7 @@ ul{
 .navbar{
 	min-height:30px !important;
   height: 38px !important;
-  min-width:500px !important;
+  min-width:1000px !important;
   margin-bottom: 0 !important;
 }
 
