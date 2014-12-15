@@ -18,7 +18,7 @@
 				</form>
 		  	<form class="login-form guest-log-in" action="/session" method="post">
 		    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-		    <input type="hidden" name="user[username]" value="guest_user">
+		    <input type="hidden" name="user[email]" value="guest">
 		    <input type="hidden" name="user[password]" value="hellotrello">
 		    <input type="submit" value="Guest Login" class="btn btn-default guest-login">
 		    </form>
