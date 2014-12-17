@@ -54,16 +54,6 @@ ActiveRecord::Schema.define(version: 20141204053908) do
 
   add_index "cards", ["list_id"], name: "index_cards_on_list_id", using: :btree
 
-  create_table "items", force: true do |t|
-    t.string   "title",                      null: false
-    t.integer  "card_id",                    null: false
-    t.boolean  "done",       default: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "items", ["card_id"], name: "index_items_on_card_id", using: :btree
-
   create_table "lists", force: true do |t|
     t.string   "title",                    null: false
     t.integer  "board_id",                 null: false
